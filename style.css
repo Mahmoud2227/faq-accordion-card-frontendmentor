@@ -1,0 +1,203 @@
+@import url("https://fonts.googleapis.com/css2?family=Kumbh+Sans:wght@400;700&display=swap");
+
+:root {
+    /* =========
+        Primary
+       ========= */
+    /* Text */
+    --Very-dark-desaturated-blue: hsl(238, 29%, 16%);
+    --Soft-red: hsl(14, 88%, 65%);
+    /* Gradient */
+    --Soft-violet: hsl(273, 75%, 66%);
+    --Soft-blue: hsl(240, 73%, 65%);
+    --background: linear-gradient(180deg, hsl(273, 75%, 66%) 10%, hsl(240, 73%, 65%) 80%);
+
+    /* =========
+        Natural
+       ========= */
+    /* Text */
+    --Very-dark-grayish-blue: hsl(237, 12%, 33%);
+    --Dark-grayish-blue: hsl(240, 6%, 50%);
+    /* Dividers */
+    --Light-grayish-blue: hsl(240, 5%, 91%);
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    min-height: 100vh;
+    background-image: var(--background);
+    font-size: 12px;
+    font-family: "Kumbh Sans", sans-serif;
+}
+
+section {
+    display: flex;
+    max-width: 920px;
+    background-color: white;
+    border-radius: 20px;
+}
+
+@media (max-width: 767px) {
+    body {
+        padding-top: 70px;
+    }
+
+    section {
+        flex-direction: column;
+        max-width: 330px;
+    }
+}
+
+section .image {
+    position: relative;
+    min-width: 450px;
+    min-height: 500px;
+}
+
+section .illustration.illustration.desktop {
+    position: relative;
+    overflow: hidden;
+    min-height: inherit;
+    min-width: inherit;
+}
+
+section .illustration.desktop img:nth-child(1) {
+    position: absolute;
+    left: -575px;
+    top: -300px;
+}
+
+section .illustration.desktop img:nth-child(2) {
+    width: 480px;
+    position: absolute;
+    left: -90px;
+    bottom: 70px;
+}
+
+section .illustration.mobile {
+    display: none;
+}
+
+section .image > img {
+    position: absolute;
+    left: -94px;
+    bottom: 120px;
+}
+
+@media (max-width: 767px) {
+    section .illustration.desktop,
+    section .image > img {
+        display: none;
+    }
+
+    section .illustration.mobile {
+        display: block;
+        position: relative;
+    }
+
+    section .image {
+        min-width: initial;
+        min-height: initial;
+        margin: 0 45px;
+    }
+
+    section .illustration.mobile img:nth-child(2) {
+        width: 240px;
+        position: absolute;
+        top: -15%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+    }
+}
+
+section .faq {
+    padding: 65px 80px 60px 25px;
+}
+
+@media (max-width: 767px) {
+    section .faq {
+        text-align: center;
+        padding: 25px;
+        padding-bottom: 50px;
+    }
+}
+
+section .faq h1 {
+    margin-bottom: 15px;
+    font-size: 2rem;
+    color: var(--Very-dark-desaturated-blue);
+}
+
+section .question {
+    overflow: hidden;
+    max-height: 50px;
+    transition: all 1s;
+    border-bottom: 1px solid var(--Light-grayish-blue);
+    padding: 20px 0;
+}
+
+section .question.active {
+    max-height: 120px;
+}
+
+section .q-head {
+    display: flex;
+    justify-content: space-between;
+    padding-right: 30px;
+}
+
+@media (max-width: 767px) {
+    section .q-head {
+        padding: 0;
+    }
+}
+
+section .q-head h3 {
+    width: fit-content;
+    cursor: pointer;
+    color: var(--Very-dark-desaturated-blue);
+    font-weight: 400;
+}
+
+section .q-head h3:hover {
+    color: var(--Soft-red);
+}
+
+section .question.active h3 {
+    color: var(--Very-dark-grayish-blue);
+    font-weight: 700;
+}
+
+section .btn img {
+    transition: all 1s;
+    cursor: pointer;
+}
+
+section .question.active .btn img {
+    transform: rotate(180deg);
+}
+
+section p {
+    text-align: left;
+    padding: 15px 25px 0 0;
+    color: var(--Dark-grayish-blue);
+    line-height: 1.1;
+}
+
+.attribution {
+    font-size: 11px;
+    text-align: center;
+}
+.attribution a {
+    color: white;
+    text-decoration: none;
+}
